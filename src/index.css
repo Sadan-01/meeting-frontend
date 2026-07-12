@@ -2491,5 +2491,11 @@ button {
   .sidebar.mobile-open {
     left: 0;
   }
+  .mobile-sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 999;
+  }
 
 }

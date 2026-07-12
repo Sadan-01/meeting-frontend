@@ -345,6 +345,12 @@ function AppContent() {
         </div>
 
       </div>
+      {mobileMenuOpen && (
+        <div
+            className="mobile-sidebar-overlay"
+            onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
 
       {/* Main Panel Content */}
       <div className="main-content">
