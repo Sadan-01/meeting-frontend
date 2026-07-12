@@ -613,6 +613,29 @@ button {
   }
 }
 
+@media (max-width: 768px) {
+
+  .auth-form-container {
+    padding: 1rem;
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+
+  .auth-card {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .auth-card-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .auth-card-header p {
+    font-size: 0.9rem;
+  }
+
+}
+
 /* Modal Overlay Styles */
 .modal-overlay {
   position: fixed;
@@ -2462,13 +2485,148 @@ button {
   }
 
   .welcome-banner {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .welcome-banner > div:first-child {
+    width: 100%;
   }
 
   .welcome-banner h1 {
     font-size: 2rem;
+    line-height: 1.2;
   }
+
+  .welcome-banner .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .metric-card {
+  padding: 1.25rem;
+}
+
+.metric-icon-wrapper {
+  width: 42px;
+  height: 42px;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+}
+
+.metric-title {
+  font-size: 0.8rem;
+}
+
+.search-card {
+  padding: 1rem;
+}
+
+.search-form {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+.search-input-field {
+  width: 100%;
+}
+
+.search-btn-submit {
+  width: 100%;
+  justify-content: center;
+}
+
+.dashboard-grid {
+  gap: 1rem;
+}
+
+.active-pipelines-card,
+.recent-meetings-card,
+.analytics-summary-card,
+.helpful-tips-card {
+  padding: 1rem;
+}
+
+.card-header-with-action {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.card-header-with-action h3 {
+  font-size: 1rem;
+}
+
+.meeting-list-item {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.meeting-item-status-wrapper {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.meeting-item-title {
+  white-space: normal;
+  overflow: visible;
+}
+
+.meeting-item-sub {
+  flex-wrap: wrap;
+}
+
+.header {
+  height: 60px;
+  padding: 0 1rem;
+}
+
+.header h1 {
+  font-size: 1.1rem;
+}
+
+.header .btn {
+  padding: 0.5rem;
+}
+
+.dashboard-view,
+.meetings-view,
+.meeting-detail-view {
+  padding: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-input {
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+}
+
+.input-with-icon .form-input {
+  padding-left: 2.75rem;
+}
+
+.btn-block {
+  margin-top: 1.25rem;
+}
+
+.btn {
+  min-height: 48px;
+}
+
+.auth-card-footer {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}
 
 }
 
