@@ -6,7 +6,7 @@ const AuthContext = createContext(null);
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
     try {
-      const savedUser = localStorage.getItem('meetmind_user');
+      const savedUser = sessionStorage.getItem('meetmind_user');
       return savedUser ? JSON.parse(savedUser) : null;
     } catch {
       return null;
@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     const initAuth = async () => {
-      const token = localStorage.getItem('meetmind_token');
+      const token = sessionStorage.getItem('meetmind_token');
       if (token) {
         try {
           const res = await api.auth.me();

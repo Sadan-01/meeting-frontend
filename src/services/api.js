@@ -16,7 +16,7 @@ async function request(endpoint, options = {}) {
   const headers = { ...options.headers };
   
   // Get token
-  const token = localStorage.getItem('meetmind_token');
+  const token = sessionStorage.getItem('meetmind_token');
   if (token) {
     headers['Authorization'] = `Bearer ${token}`;
   }
@@ -36,8 +36,8 @@ async function request(endpoint, options = {}) {
     
     // Check for token expiration / unauthorized
     if (response.status === 401) {
-      localStorage.removeItem('meetmind_token');
-      localStorage.removeItem('meetmind_user');
+      sessionStorage.removeItem('meetmind_token');
+      sessionStorage.removeItem('meetmind_user');
       window.dispatchEvent(new Event('auth_session_expired'));
     }
     
@@ -90,8 +90,8 @@ export const api = {
         body: JSON.stringify({ email, password }),
       });
       if (res.success && res.data?.access_token) {
-        localStorage.setItem('meetmind_token', res.data.access_token);
-        localStorage.setItem('meetmind_user', JSON.stringify(res.data.user));
+        sessionStorage.setItem('meetmind_token', res.data.access_token);
+        sessionStorage.setItem('meetmind_user', JSON.stringify(res.data.user));
       }
       return res;
     },
