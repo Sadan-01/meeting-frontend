@@ -1,0 +1,133 @@
+/* ===========================
+      WHY CHOOSE
+=========================== */
+
+.why-section{
+
+padding:140px 7%;
+
+max-width:1300px;
+
+margin:auto;
+
+}
+
+.why-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+margin-top:80px;
+
+}
+
+.why-card{
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:24px;
+
+padding:35px;
+
+transition:all .35s ease;
+
+cursor:pointer;
+
+}
+
+.why-card:hover{
+
+transform:translateY(-12px);
+
+background:rgba(99,102,241,.08);
+
+border-color:rgba(99,102,241,.35);
+
+box-shadow:0 25px 60px rgba(99,102,241,.18);
+
+}
+
+.why-icon{
+
+width:70px;
+
+height:70px;
+
+border-radius:20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:1.8rem;
+
+margin-bottom:25px;
+
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);
+
+color:white;
+
+transition:.35s;
+
+}
+
+.why-card:hover .why-icon{
+
+transform:rotate(-8deg) scale(1.1);
+
+box-shadow:0 12px 30px rgba(99,102,241,.45);
+
+}
+
+.why-card h3{
+
+font-size:1.4rem;
+
+margin-bottom:15px;
+
+}
+
+.why-card p{
+
+color:var(--text-secondary);
+
+line-height:1.8;
+
+}
+
+@media(max-width:1100px){
+
+.why-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:700px){
+
+.why-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.why-section{
+
+padding:100px 6%;
+
+}
+
+}

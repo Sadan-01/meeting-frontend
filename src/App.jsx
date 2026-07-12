@@ -10,6 +10,7 @@ import {
   LayoutGrid, FileAudio, User, LogOut, Upload, Menu, 
   Settings, ShieldAlert, Key, Edit, CheckCircle, AlertCircle 
 } from 'lucide-react';
+import LandingPage from "./pages/LandingPage";
 
 function AppContent() {
   const { user, loading, logout, updateProfile } = useAuth();
@@ -18,6 +19,7 @@ function AppContent() {
   const [uploadModalOpen, setUploadModalOpen] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showAuth, setShowAuth] = useState(false);
 
   // Profile management states
   const [fullName, setFullName] = useState(user?.full_name || '');
@@ -111,10 +113,16 @@ function AppContent() {
     );
   }
 
-  // Not Authenticated -> Show Auth screen
-  if (!user) {
-    return <Auth />;
-  }
+
+
+if (!user) {
+
+    if (showAuth) {
+        return <Auth />;
+    }
+
+    return <LandingPage onGetStarted={() => setShowAuth(true)} />;
+}
 
   // Render correct view
   const renderView = () => {
