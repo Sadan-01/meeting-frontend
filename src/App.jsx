@@ -294,14 +294,14 @@ function AppContent() {
   <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
     <div className="logo-icon">M</div>
 
-    {!sidebarCollapsed && (
-      <span
-        className="logo-text font-display sidebar-text"
-        style={{ fontSize: "1.25rem" }}
-      >
-        MeetMind <span className="text-accent">AI</span>
-      </span>
-    )}
+    {(!sidebarCollapsed || mobileMenuOpen) && (
+  <span
+    className="logo-text font-display sidebar-text"
+    style={{ fontSize: "1.25rem" }}
+  >
+    MeetMind <span className="text-accent">AI</span>
+  </span>
+)}
   </div>
 
   {mobileMenuOpen && (
@@ -327,7 +327,9 @@ function AppContent() {
             style={{ justifyContent: sidebarCollapsed ? 'center' : 'flex-start', padding: '0.75rem 1rem' }}
           >
             <LayoutGrid size={18} />
-            {!sidebarCollapsed && <span className="sidebar-text">Dashboard</span>}
+            (!sidebarCollapsed || mobileMenuOpen) && (
+                <span className="sidebar-text">Dashboard</span>
+            )
           </button>
           
           <button 
@@ -336,7 +338,9 @@ function AppContent() {
             style={{ justifyContent: sidebarCollapsed ? 'center' : 'flex-start', padding: '0.75rem 1rem' }}
           >
             <FileAudio size={18} />
-            {!sidebarCollapsed && <span className="sidebar-text">Meetings</span>}
+            {(!sidebarCollapsed || mobileMenuOpen) && (
+                <span className="sidebar-text">Meetings</span>
+            )}
           </button>
           
           <button 
@@ -345,7 +349,9 @@ function AppContent() {
             style={{ justifyContent: sidebarCollapsed ? 'center' : 'flex-start', padding: '0.75rem 1rem' }}
           >
             <Upload size={18} />
-            {!sidebarCollapsed && <span className="sidebar-text">Upload</span>}
+            {(!sidebarCollapsed || mobileMenuOpen) && (
+                <span className="sidebar-text">Upload</span>
+            )}
           </button>
 
           <div style={{ margin: '1rem 0', borderTop: '1px solid var(--card-border)' }}></div>
@@ -356,7 +362,9 @@ function AppContent() {
             style={{ justifyContent: sidebarCollapsed ? 'center' : 'flex-start', padding: '0.75rem 1rem' }}
           >
             <User size={18} />
-            {!sidebarCollapsed && <span className="sidebar-text">Settings</span>}
+            {(!sidebarCollapsed || mobileMenuOpen) && (
+                <span className="sidebar-text">Settings</span>
+            )}
           </button>
         </div>
 
@@ -366,7 +374,7 @@ function AppContent() {
             <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)', display: 'flex', alignItems: 'center', justifycontent: 'center', color: 'white', fontWeight: 'bold', flexShrink: 0, justifyContent: 'center' }}>
               {user.full_name?.charAt(0).toUpperCase() || 'U'}
             </div>
-            {!sidebarCollapsed && (
+            {!sidebarCollapsed || mobileMenuOpen && (
               <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
                 <span style={{ fontSize: '0.875rem', color: 'white', fontWeight: '500', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>{user.full_name}</span>
                 <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>{user.email}</span>
