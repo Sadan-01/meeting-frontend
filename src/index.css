@@ -411,9 +411,7 @@ button {
   gap: 0.75rem;
 }
 
-.mobile-brand-logo {
-  display: none;
-}
+
 
 .logo-icon {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
@@ -620,15 +618,19 @@ button {
 @media (max-width: 768px) {
 
   .auth-form-container {
-    padding: 1rem;
-    align-items: flex-start;
-    padding-top: 2rem;
-  }
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
   .auth-card {
-    max-width: 100%;
-    padding: 1.5rem;
-  }
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 20px;
+}
 
   .auth-card-header h2 {
     font-size: 1.75rem;
@@ -637,15 +639,6 @@ button {
   .auth-card-header p {
     font-size: 0.9rem;
   }
-
-  .mobile-brand-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  width: 100%;
-  margin-bottom: 1.5rem;
-}
 
 .auth-form-container {
   justify-content: flex-start;
