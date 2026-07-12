@@ -140,6 +140,13 @@ export default function Auth() {
       
       {/* Right panel: Form */}
       <div className="auth-form-container">
+
+          <div className="mobile-brand-logo">
+            <span className="logo-icon">M</span>
+            <span className="logo-text font-display">
+                MeetMind <span className="text-accent">AI</span>
+            </span>
+          </div>
         <div className="auth-card glass-card animate-fade-in">
           <div className="auth-card-header">
             <h2 className="font-display">{isLogin ? 'Welcome Back' : 'Create Account'}</h2>
