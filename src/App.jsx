@@ -280,10 +280,44 @@ function AppContent() {
     >
         
         {/* Branding header */}
-        <div style={{ height: '70px', display: 'flex', alignItems: 'center', padding: '0 1.5rem', borderBottom: '1px solid var(--card-border)', gap: '0.75rem', overflow: 'hidden' }}>
-          <div className="logo-icon" style={{ flexShrink: 0 }}>M</div>
-          <span className="logo-text font-display sidebar-text" style={{ fontSize: '1.25rem' }}>MeetMind <span className="text-accent">AI</span></span>
-        </div>
+        {/* Branding header */}
+<div
+  style={{
+    height: "70px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: "0 1rem",
+    borderBottom: "1px solid var(--card-border)",
+  }}
+>
+  <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+    <div className="logo-icon">M</div>
+
+    {!sidebarCollapsed && (
+      <span
+        className="logo-text font-display sidebar-text"
+        style={{ fontSize: "1.25rem" }}
+      >
+        MeetMind <span className="text-accent">AI</span>
+      </span>
+    )}
+  </div>
+
+  {mobileMenuOpen && (
+    <button
+      className="btn btn-ghost"
+      onClick={() => setMobileMenuOpen(false)}
+      style={{
+        padding: "0.35rem",
+        minWidth: "36px",
+        minHeight: "36px",
+      }}
+    >
+      ✕
+    </button>
+  )}
+</div>
 
         {/* Navigation list */}
         <div style={{ padding: '1.5rem 1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', flexGrow: 1 }}>
