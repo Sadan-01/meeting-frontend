@@ -17,6 +17,7 @@ function AppContent() {
   const [viewParams, setViewParams] = useState({});
   const [uploadModalOpen, setUploadModalOpen] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Profile management states
   const [fullName, setFullName] = useState(user?.full_name || '');
@@ -271,7 +272,12 @@ function AppContent() {
   return (
     <div className="dashboard-layout">
       {/* Sidebar Nav */}
-      <div className={`sidebar ${sidebarCollapsed ? 'collapsed-menu' : ''}`} style={{ borderRight: '1px solid var(--card-border)' }}>
+      <div
+        className={`sidebar ${
+            sidebarCollapsed ? 'collapsed-menu' : ''
+        } ${mobileMenuOpen ? 'mobile-open' : ''}`}
+        style={{ borderRight: '1px solid var(--card-border)' }}
+    >
         
         {/* Branding header */}
         <div style={{ height: '70px', display: 'flex', alignItems: 'center', padding: '0 1.5rem', borderBottom: '1px solid var(--card-border)', gap: '0.75rem', overflow: 'hidden' }}>
@@ -346,7 +352,13 @@ function AppContent() {
         <div className="header">
           <button 
             className="btn btn-ghost" 
-            onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+            onClick={() => {
+                if (window.innerWidth <= 768) {
+                    setMobileMenuOpen(!mobileMenuOpen);
+                } else {
+                    setSidebarCollapsed(!sidebarCollapsed);
+                }
+            }}
             style={{ padding: '0.5rem', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
           >
             <Menu size={20} />
