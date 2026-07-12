@@ -327,9 +327,9 @@ function AppContent() {
             style={{ justifyContent: sidebarCollapsed ? 'center' : 'flex-start', padding: '0.75rem 1rem' }}
           >
             <LayoutGrid size={18} />
-            (!sidebarCollapsed || mobileMenuOpen) && (
+            {(!sidebarCollapsed || mobileMenuOpen) && (
                 <span className="sidebar-text">Dashboard</span>
-            )
+            )}
           </button>
           
           <button 
@@ -374,7 +374,7 @@ function AppContent() {
             <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)', display: 'flex', alignItems: 'center', justifycontent: 'center', color: 'white', fontWeight: 'bold', flexShrink: 0, justifyContent: 'center' }}>
               {user.full_name?.charAt(0).toUpperCase() || 'U'}
             </div>
-            {!sidebarCollapsed || mobileMenuOpen && (
+            {(!sidebarCollapsed || mobileMenuOpen) && (
               <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
                 <span style={{ fontSize: '0.875rem', color: 'white', fontWeight: '500', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>{user.full_name}</span>
                 <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>{user.email}</span>
