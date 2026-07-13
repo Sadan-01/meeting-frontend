@@ -388,8 +388,21 @@ if (!user) {
                 <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>{user.email}</span>
               </div>
             )}
-            <button className="btn-ghost" onClick={logout} style={{ color: 'var(--text-muted)', padding: '0.25rem', borderRadius: '4px', cursor: 'pointer' }} title="Logout">
-              <LogOut size={16} />
+            <button
+                className="btn-ghost"
+                onClick={() => {
+                logout();
+                setShowAuth(false);
+            }}
+            style={{
+                color: 'var(--text-muted)',
+                padding: '0.25rem',
+                borderRadius: '4px',
+                cursor: 'pointer'
+            }}
+                title="Logout"
+            >
+                <LogOut size={16} />
             </button>
           </div>
         </div>
